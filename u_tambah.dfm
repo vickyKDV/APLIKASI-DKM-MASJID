@@ -1,0 +1,199 @@
+object fm_tambah: Tfm_tambah
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'TAMBAH KAS'
+  ClientHeight = 256
+  ClientWidth = 572
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object grp1: TGroupBox
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 566
+    Height = 250
+    Align = alClient
+    Color = clTeal
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 569
+    ExplicitHeight = 257
+    object lbl1: TLabel
+      Left = 16
+      Top = 28
+      Width = 52
+      Height = 18
+      Caption = 'Tanggal'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lbl2: TLabel
+      Left = 16
+      Top = 59
+      Width = 75
+      Height = 18
+      Caption = 'Keterangan'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lbl3: TLabel
+      Left = 16
+      Top = 119
+      Width = 75
+      Height = 18
+      Caption = 'Pemasukan'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lbl4: TLabel
+      Left = 16
+      Top = 152
+      Width = 79
+      Height = 18
+      Caption = 'Pengeluaran'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object btn1: TSpeedButton
+      Left = 432
+      Top = 192
+      Width = 121
+      Height = 38
+      Caption = 'Simpan'
+      OnClick = btn1Click
+    end
+    object btn2: TSpeedButton
+      Left = 305
+      Top = 192
+      Width = 121
+      Height = 38
+      Caption = 'Batal'
+    end
+    object dtp_tanggal: TDateTimePicker
+      Left = 104
+      Top = 24
+      Width = 305
+      Height = 26
+      Date = 43223.726889826390000000
+      Format = 'dddd, dd MMMM yyyy'
+      Time = 43223.726889826390000000
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+    object mmo_keterangan: TMemo
+      Left = 104
+      Top = 56
+      Width = 449
+      Height = 54
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object edt_pemasukan: TsCurrencyEdit
+      Left = 104
+      Top = 116
+      Width = 172
+      Height = 27
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      BoundLabel.Indent = 0
+      BoundLabel.Font.Charset = DEFAULT_CHARSET
+      BoundLabel.Font.Color = clWindowText
+      BoundLabel.Font.Height = -11
+      BoundLabel.Font.Name = 'Tahoma'
+      BoundLabel.Font.Style = []
+      BoundLabel.Layout = sclLeft
+      BoundLabel.MaxWidth = 0
+      BoundLabel.UseSkinColor = True
+      SkinData.SkinSection = 'EDIT'
+      GlyphMode.Blend = 0
+      GlyphMode.Grayed = False
+      DecimalPlaces = 0
+      DisplayFormat = 'Rp #,##;-Rp #,##;'
+    end
+    object edt_pengeluaran: TsCurrencyEdit
+      Left = 104
+      Top = 149
+      Width = 172
+      Height = 27
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      BoundLabel.Indent = 0
+      BoundLabel.Font.Charset = DEFAULT_CHARSET
+      BoundLabel.Font.Color = clWindowText
+      BoundLabel.Font.Height = -11
+      BoundLabel.Font.Name = 'Tahoma'
+      BoundLabel.Font.Style = []
+      BoundLabel.Layout = sclLeft
+      BoundLabel.MaxWidth = 0
+      BoundLabel.UseSkinColor = True
+      SkinData.SkinSection = 'EDIT'
+      GlyphMode.Blend = 0
+      GlyphMode.Grayed = False
+      DecimalPlaces = 0
+      DisplayFormat = 'Rp #,##;-Rp #,##;'
+    end
+  end
+  object act_1: TActionList
+    Left = 272
+    Top = 128
+    object act_simpan: TAction
+      Caption = 'Simpan'
+      OnExecute = act_simpanExecute
+    end
+    object act_bersihall: TAction
+      Caption = 'act_bersihall'
+      OnExecute = act_bersihallExecute
+    end
+  end
+end

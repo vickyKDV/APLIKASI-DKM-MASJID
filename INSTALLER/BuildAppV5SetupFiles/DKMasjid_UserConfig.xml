@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 
+This is your sample dynamic user configuration.  Use this to override per user
+elements within your sequenced package.  The document is pre-filled with data from your sequenced package.
+Customize the document to fit your needs before publishing with your package.
+ -->
+<UserConfiguration PackageId="7b781d23-b91a-4305-8b05-dc0d6e371b71" DisplayName="DKMasjid" IgnorableNamespaces="" xmlns="http://schemas.microsoft.com/appv/2010/userconfiguration">
+  <!-- 
+  OVERRIDE BEHAVIOR OF MANIFEST AND CONFIGURATION FILES 
+  Integration Subsystems can be enabled and disabled independently of the content.
+  Thus if Shortcuts are enabled, The client will use the shortcuts contained within
+  the manifest by default.
+
+  Each Integration Subsystem can contain an <Extensions /> node. If this child element
+  is present, the client will ignore the content in the Manifest file for that subsystem
+  and only use the content in the configuration file.
+
+  e.g. for the shortcuts subsystem, 
+  (A)
+  if the user defined this in either the dynamic or deployment config file:
+	  <Shortcuts  Enabled="true">
+		  <Extensions>
+			  ...
+		  </Extensions>
+	  </Shortcuts>
+
+  Content in the manifest will be ignored.
+
+  (B)
+  IF the user defined only this:
+	  <Shortcuts  Enabled="true"/>
+  Then the content in the Manifest will be integrated during publishing.
+
+  (C)
+  note that if the user defines this:
+	  <Shortcuts  Enabled="true">
+		  <Extensions/>
+	  </Shortcuts>
+
+  Then all the Shortcuts within the manifest will still be ignored.
+  There will be no shortcuts integrated.
+ -->
+  <Subsystems>
+    <Shortcuts Enabled="true">
+      <Extensions>
+        <Extension Category="AppV.Shortcut">
+          <Shortcut>
+            <File>[{Common Programs}]\DKMasjid\AplikasiDKM.exe.lnk</File>
+            <Target>[{ProgramFilesX86}]\KDVShared\DKMasjid\AplikasiDKM.exe_{6024DA0A-155B-45DA-84E5-44ED6D05AAAA}.exe</Target>
+            <Icon>[{ProgramFilesX86}]\KDVShared\DKMasjid\AplikasiDKM.exe.0.ico</Icon>
+            <Arguments/>
+            <WorkingDirectory>[{ProgramFilesX86}]\KDVShared\DKMasjid\</WorkingDirectory>
+            <Description>AplikasiDKM.exe</Description>
+            <ShowCommand>1</ShowCommand>
+            <ApplicationId>[{ProgramFilesX86}]\KDVShared\DKMasjid\AplikasiDKM.exe</ApplicationId>
+          </Shortcut>
+        </Extension>
+        <Extension Category="AppV.Shortcut">
+          <Shortcut>
+            <File>[{Common Desktop}]\AplikasiDKM.exe.lnk</File>
+            <Target>[{ProgramFilesX86}]\KDVShared\DKMasjid\AplikasiDKM.exe_{6024DA0A-155B-45DA-84E5-44ED6D05AAAA}.exe</Target>
+            <Icon>[{ProgramFilesX86}]\KDVShared\DKMasjid\AplikasiDKM.exe.1.ico</Icon>
+            <Arguments/>
+            <WorkingDirectory>[{ProgramFilesX86}]\KDVShared\DKMasjid\</WorkingDirectory>
+            <Description>AplikasiDKM.exe</Description>
+            <ShowCommand>1</ShowCommand>
+            <ApplicationId>[{ProgramFilesX86}]\KDVShared\DKMasjid\AplikasiDKM.exe</ApplicationId>
+          </Shortcut>
+        </Extension>
+      </Extensions>
+    </Shortcuts>
+    <FileTypeAssociations Enabled="true">
+      <Extensions>
+      </Extensions>
+    </FileTypeAssociations>
+    <!-- URL Protocols -->
+    <URLProtocols Enabled="true">
+      <!-- 
+          <Extensions>
+            <Extension Category="AppV.URLProtocol">
+              <URLProtocol>
+                <Name>mailto</Name> 
+                <ApplicationURLProtocol>
+                  <DefaultIcon>[{ProgramFilesX86}]\Microsoft Contoso\Contoso\contosomail.EXE,-9403</DefaultIcon> 
+                  <EditFlags>2</EditFlags> 
+                  <Description /> 
+                  <AppUserModelId /> 
+                  <FriendlyTypeName /> 
+                  <InfoTip /> 
+                  <SourceFilter /> 
+                  <ShellFolder /> 
+                  <WebNavigableCLSID /> 
+                  <ExplorerFlags>2</ExplorerFlags> 
+                  <CLSID /> 
+                  <ShellCommands>
+                    <DefaultCommand>open</DefaultCommand> 
+                    <ShellCommand>
+                      <ApplicationId>[{ProgramFilesX86}]\Microsoft Contoso\Contoso\contosomail.EXE</ApplicationId> 
+                      <Name>open</Name> 
+                      <CommandLine>[{ProgramFilesX86}\Microsoft Contoso\Contoso\contosomail.EXE" -c OEP.Note /m "%1"</CommandLine> 
+                      <DropTargetClassId /> 
+                      <FriendlyName /> 
+                      <Extended>0</Extended> 
+                      <LegacyDisable>0</LegacyDisable> 
+                      <SuppressionPolicy>2</SuppressionPolicy> 
+                      <DdeExec>
+                        <NoActivateHandler /> 
+                        <Application>contosomail</Application> 
+                        <Topic>ShellSystem</Topic> 
+                        <IfExec>[SHELLNOOP]</IfExec> 
+                        <DdeCommand>[SetForeground][ShellNewDatabase "%1"]</DdeCommand> 
+                      </DdeExec>
+                    </ShellCommand>
+                  </ShellCommands>
+                </ApplicationURLProtocol>
+              </URLProtocol>
+            </Extension>
+          </Extensions>
+ -->
+    </URLProtocols>
+    <!-- COM -->
+    <COM Mode="Isolated">
+      <IntegratedCOMAttributes OutOfProcessEnabled="true" InProcessEnabled="false"/>
+    </COM>
+    <!-- Objects -->
+    <Objects Enabled="true"/>
+    <!-- Virtual Registry -->
+    <Registry Enabled="true">
+      <!-- 
+          <Include>
+            <Key Path="\REGISTRY\USER\[{AppVCurrentUserSID}]\Software\Foo">
+              <Value Type="REG_SZ" Name="Bar" Data="NewValue"/>
+            </Key>
+            <Key Path="\REGISTRY\USER\[{AppVCurrentUserSID}]\Software\EmptyKey"/>
+          </Include>
+ -->
+      <!-- 
+          <Delete>
+            <Key Path="\REGISTRY\USER\[{AppVCurrentUserSID}]\Software\Foo\BarDelete"/>
+          </Delete>
+ -->
+    </Registry>
+    <!-- Virtual File System -->
+    <FileSystem Enabled="true"/>
+    <!-- Fonts -->
+    <Fonts Enabled="true"/>
+    <!-- Environment Variables -->
+    <EnvironmentVariables Enabled="true"/>
+  </Subsystems>
+  <Applications>
+    <Application Id="[{ProgramFilesX86}]\KDVShared\DKMasjid\AplikasiDKM.exe" Enabled="true">
+      <VisualElements>
+        <Name>AplikasiDKM.exe</Name>
+        <Icon/>
+        <Description/>
+      </VisualElements>
+    </Application>
+  </Applications>
+  <!--     User Scripts Example - customize and uncomment to use user scripts
+
+    <UserScripts>
+      <StartProcess RunInVirtualEnvironment="true">
+        <Path>VFS\ProgramFilesX86\App\dosomething.exe</Path>
+        <Arguments>-WithArgs</Arguments>
+        <Wait RollbackOnError="true"/>
+        <ApplicationId>[{AppVPackageRoot}]\Contoso\ContosoApp.EXE</ApplicationId>
+      </StartProcess>
+      <ExitProcess>
+        <Path>VFS\ProgramFilesX86\App\UnDoSomething.exe</Path>
+        <Arguments>-WithArgs</Arguments>
+        <Wait RollbackOnError="false"/>
+        <ApplicationId>[{AppVPackageRoot}]\Contoso\ContosoApp.EXE</ApplicationId>
+      </ExitProcess>
+      
+      <StartVirtualEnvironment  RunInVirtualEnvironment="true">
+        <Path>[{AppVPackageRoot}]\VFS\ProgramFilesX86\App\DoSomething.exe</Path>
+        <Arguments>-WithArgs</Arguments>
+        <Wait RollbackOnError="true"/>
+      </StartVirtualEnvironment>
+    
+      <TerminateVirtualEnvironment>
+        <Path>[{AppVPackageRoot}]\VFS\ProgramFilesX86\App\UnDoSomething.exe</Path>
+        <Arguments>-WithArgs</Arguments>
+      <Wait RollbackOnError="false"/>
+      </TerminateVirtualEnvironment>
+      <PublishPackage>
+        <Path>\\server\share\foobar.exe</Path>
+        <Arguments>-WithArgs</Arguments>
+        <Wait RollbackOnError="true" Timeout="30"/>
+      </PublishPackage>
+      <UnpublishPackage>
+        <Path>\\server\share\barfoo.exe</Path>
+        <Arguments>-WithArgs</Arguments>
+        <Wait RollbackOnError="false" Timeout="30"/>
+      </UnpublishPackage>
+    </UserScripts>
+    
+ -->
+</UserConfiguration>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="14.8" version="14.8" Modules="architect" RootPath="." Language="en" Id="{CF84D3E2-254C-4197-8D65-ED3A6E3D2AFF}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;ActSyncAppComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="Manufacturer" Value="KDVShared"/>
+    <ROW Property="ProductCode" Value="1033:{5BBFD1E0-247B-456F-9E0C-557530D70B96} 1057:{D889A655-FCCD-4094-AE7A-A802F4A59BAC} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1057"/>
+    <ROW Property="ProductName" Value="DKMasjid"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{7B781D23-B91A-4305-8B05-DC0D6E371B71}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="__history_Dir" Directory_Parent="APPDIR" DefaultDir="__HIST~1|__history"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_ExePath" ComponentId="{4D2B681F-9FBE-4FD6-87E1-5412DF167FAF}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="AplikasiDKM.dpr" ComponentId="{19B5EC61-FAA1-41CD-9BA0-48443CD9A83F}" Directory_="APPDIR" Attributes="0" KeyPath="dbmasjid.sql" Type="0"/>
+    <ROW Component="AplikasiDKM.dpr.1" ComponentId="{6C52BDF8-F8C2-4240-B413-CD809C2A94F6}" Directory_="__history_Dir" Attributes="0" KeyPath="AplikasiDKM.dpr.1" Type="0"/>
+    <ROW Component="AplikasiDKM.exe" ComponentId="{990911E8-7933-42C8-AAA7-8DEB3F6ADFB5}" Directory_="APPDIR" Attributes="0" KeyPath="AplikasiDKM.exe"/>
+    <ROW Component="ProductInformation" ComponentId="{A86C7BAE-DA2A-4E85-BBC4-8E2B3055E1BA}" Directory_="APPDIR" Attributes="4" KeyPath="Version" Options="1"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{A968A0C1-E887-4238-8449-FF1B3059F7B4}" Directory_="SHORTCUTDIR" Attributes="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_ExePath AplikasiDKM.dpr AplikasiDKM.dpr.1 AplikasiDKM.exe ProductInformation SHORTCUTDIR"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="AplikasiDKM.dpr.1" Component_="AplikasiDKM.dpr.1" FileName="APLIKA~1.~1~|AplikasiDKM.dpr.~1~" Attributes="0" SourcePath="..\__history\AplikasiDKM.dpr.~1~" SelfReg="false" NextFile="AplikasiDKM.dpr.2"/>
+    <ROW File="AplikasiDKM.dpr.2" Component_="AplikasiDKM.dpr.1" FileName="APLIKA~1.~2~|AplikasiDKM.dpr.~2~" Attributes="0" SourcePath="..\__history\AplikasiDKM.dpr.~2~" SelfReg="false" NextFile="AplikasiDKM.dpr.3"/>
+    <ROW File="AplikasiDKM.dpr.3" Component_="AplikasiDKM.dpr.1" FileName="APLIKA~1.~3~|AplikasiDKM.dpr.~3~" Attributes="0" SourcePath="..\__history\AplikasiDKM.dpr.~3~" SelfReg="false" NextFile="AplikasiDKM.dpr.4"/>
+    <ROW File="AplikasiDKM.dpr.4" Component_="AplikasiDKM.dpr.1" FileName="APLIKA~1.~4~|AplikasiDKM.dpr.~4~" Attributes="0" SourcePath="..\__history\AplikasiDKM.dpr.~4~" SelfReg="false" NextFile="AplikasiDKM.dpr.5"/>
+    <ROW File="AplikasiDKM.dpr.5" Component_="AplikasiDKM.dpr.1" FileName="APLIKA~1.~5~|AplikasiDKM.dpr.~5~" Attributes="0" SourcePath="..\__history\AplikasiDKM.dpr.~5~" SelfReg="false" NextFile="AplikasiDKM.dpr.6"/>
+    <ROW File="AplikasiDKM.dpr.6" Component_="AplikasiDKM.dpr.1" FileName="APLIKA~1.~6~|AplikasiDKM.dpr.~6~" Attributes="0" SourcePath="..\__history\AplikasiDKM.dpr.~6~" SelfReg="false" NextFile="u_main.dfm.25"/>
+    <ROW File="AplikasiDKM.exe" Component_="AplikasiDKM.exe" FileName="APLIKA~1.EXE|AplikasiDKM.exe" Attributes="0" SourcePath="..\AplikasiDKM.exe" SelfReg="false" NextFile="dbmasjid.sql" DigSign="true"/>
+    <ROW File="dbmasjid.sql" Component_="AplikasiDKM.dpr" FileName="dbmasjid.sql" Attributes="0" SourcePath="..\dbmasjid.sql" SelfReg="false" NextFile="pencil.ico"/>
+    <ROW File="pencil.ico" Component_="AplikasiDKM.dpr" FileName="icon.ico" Attributes="0" SourcePath="..\pencil.ico" SelfReg="false" NextFile="AplikasiDKM.dpr.1"/>
+    <ROW File="u_main.dfm.25" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~25|u_main.dfm.~25~" Attributes="0" SourcePath="..\__history\u_main.dfm.~25~" SelfReg="false" NextFile="u_main.dfm.26"/>
+    <ROW File="u_main.dfm.26" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~26|u_main.dfm.~26~" Attributes="0" SourcePath="..\__history\u_main.dfm.~26~" SelfReg="false" NextFile="u_main.dfm.27"/>
+    <ROW File="u_main.dfm.27" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~27|u_main.dfm.~27~" Attributes="0" SourcePath="..\__history\u_main.dfm.~27~" SelfReg="false" NextFile="u_main.dfm.28"/>
+    <ROW File="u_main.dfm.28" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~28|u_main.dfm.~28~" Attributes="0" SourcePath="..\__history\u_main.dfm.~28~" SelfReg="false" NextFile="u_main.dfm.29"/>
+    <ROW File="u_main.dfm.29" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~29|u_main.dfm.~29~" Attributes="0" SourcePath="..\__history\u_main.dfm.~29~" SelfReg="false" NextFile="u_main.dfm.30"/>
+    <ROW File="u_main.dfm.30" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~30|u_main.dfm.~30~" Attributes="0" SourcePath="..\__history\u_main.dfm.~30~" SelfReg="false" NextFile="u_main.dfm.31"/>
+    <ROW File="u_main.dfm.31" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~31|u_main.dfm.~31~" Attributes="0" SourcePath="..\__history\u_main.dfm.~31~" SelfReg="false" NextFile="u_main.dfm.32"/>
+    <ROW File="u_main.dfm.32" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~32|u_main.dfm.~32~" Attributes="0" SourcePath="..\__history\u_main.dfm.~32~" SelfReg="false" NextFile="u_main.dfm.33"/>
+    <ROW File="u_main.dfm.33" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~33|u_main.dfm.~33~" Attributes="0" SourcePath="..\__history\u_main.dfm.~33~" SelfReg="false" NextFile="u_main.dfm.34"/>
+    <ROW File="u_main.dfm.34" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~1.~34|u_main.dfm.~34~" Attributes="0" SourcePath="..\__history\u_main.dfm.~34~" SelfReg="false" NextFile="u_main.pas.25"/>
+    <ROW File="u_main.pas.25" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~25|u_main.pas.~25~" Attributes="0" SourcePath="..\__history\u_main.pas.~25~" SelfReg="false" NextFile="u_main.pas.26"/>
+    <ROW File="u_main.pas.26" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~26|u_main.pas.~26~" Attributes="0" SourcePath="..\__history\u_main.pas.~26~" SelfReg="false" NextFile="u_main.pas.27"/>
+    <ROW File="u_main.pas.27" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~27|u_main.pas.~27~" Attributes="0" SourcePath="..\__history\u_main.pas.~27~" SelfReg="false" NextFile="u_main.pas.28"/>
+    <ROW File="u_main.pas.28" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~28|u_main.pas.~28~" Attributes="0" SourcePath="..\__history\u_main.pas.~28~" SelfReg="false" NextFile="u_main.pas.29"/>
+    <ROW File="u_main.pas.29" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~29|u_main.pas.~29~" Attributes="0" SourcePath="..\__history\u_main.pas.~29~" SelfReg="false" NextFile="u_main.pas.30"/>
+    <ROW File="u_main.pas.30" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~30|u_main.pas.~30~" Attributes="0" SourcePath="..\__history\u_main.pas.~30~" SelfReg="false" NextFile="u_main.pas.31"/>
+    <ROW File="u_main.pas.31" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~31|u_main.pas.~31~" Attributes="0" SourcePath="..\__history\u_main.pas.~31~" SelfReg="false" NextFile="u_main.pas.32"/>
+    <ROW File="u_main.pas.32" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~32|u_main.pas.~32~" Attributes="0" SourcePath="..\__history\u_main.pas.~32~" SelfReg="false" NextFile="u_main.pas.33"/>
+    <ROW File="u_main.pas.33" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~33|u_main.pas.~33~" Attributes="0" SourcePath="..\__history\u_main.pas.~33~" SelfReg="false" NextFile="u_main.pas.34"/>
+    <ROW File="u_main.pas.34" Component_="AplikasiDKM.dpr.1" FileName="U_MAIN~2.~34|u_main.pas.~34~" Attributes="0" SourcePath="..\__history\u_main.pas.~34~" SelfReg="false" NextFile="u_module.dfm.1"/>
+    <ROW File="u_module.dfm.1" Component_="AplikasiDKM.dpr.1" FileName="U_MODU~1.~1~|u_module.dfm.~1~" Attributes="0" SourcePath="..\__history\u_module.dfm.~1~" SelfReg="false" NextFile="u_module.dfm.2"/>
+    <ROW File="u_module.dfm.2" Component_="AplikasiDKM.dpr.1" FileName="U_MODU~1.~2~|u_module.dfm.~2~" Attributes="0" SourcePath="..\__history\u_module.dfm.~2~" SelfReg="false" NextFile="u_module.dfm.3"/>
+    <ROW File="u_module.dfm.3" Component_="AplikasiDKM.dpr.1" FileName="U_MODU~1.~3~|u_module.dfm.~3~" Attributes="0" SourcePath="..\__history\u_module.dfm.~3~" SelfReg="false" NextFile="u_module.dfm.4"/>
+    <ROW File="u_module.dfm.4" Component_="AplikasiDKM.dpr.1" FileName="U_MODU~1.~4~|u_module.dfm.~4~" Attributes="0" SourcePath="..\__history\u_module.dfm.~4~" SelfReg="false" NextFile="u_module.dfm.5"/>
+    <ROW File="u_module.dfm.5" Component_="AplikasiDKM.dpr.1" FileName="U_MODU~1.~5~|u_module.dfm.~5~" Attributes="0" SourcePath="..\__history\u_module.dfm.~5~" SelfReg="false" NextFile="u_module.dfm.6"/>
+    <ROW File="u_module.dfm.6" Component_="AplikasiDKM.dpr.1" FileName="U_MODU~1.~6~|u_module.dfm.~6~" Attributes="0" SourcePath="..\__history\u_module.dfm.~6~" SelfReg="false" NextFile="u_module.pas.1"/>
+    <ROW File="u_module.pas.1" Component_="AplikasiDKM.dpr.1" FileName="U_MODU~2.~1~|u_module.pas.~1~" Attributes="0" SourcePath="..\__history\u_module.pas.~1~" SelfReg="false" NextFile="u_module.pas.2"/>
+    <ROW File="u_module.pas.2" Component_="AplikasiDKM.dpr.1" FileName="U_MODU~2.~2~|u_module.pas.~2~" Attributes="0" SourcePath="..\__history\u_module.pas.~2~" SelfReg="false" NextFile="u_tambah.dfm.10"/>
+    <ROW File="u_tambah.dfm.10" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~10|u_tambah.dfm.~10~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~10~" SelfReg="false" NextFile="u_tambah.dfm.11"/>
+    <ROW File="u_tambah.dfm.11" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~11|u_tambah.dfm.~11~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~11~" SelfReg="false" NextFile="u_tambah.dfm.12"/>
+    <ROW File="u_tambah.dfm.12" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~12|u_tambah.dfm.~12~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~12~" SelfReg="false" NextFile="u_tambah.dfm.13"/>
+    <ROW File="u_tambah.dfm.13" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~13|u_tambah.dfm.~13~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~13~" SelfReg="false" NextFile="u_tambah.dfm.14"/>
+    <ROW File="u_tambah.dfm.14" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~14|u_tambah.dfm.~14~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~14~" SelfReg="false" NextFile="u_tambah.dfm.5"/>
+    <ROW File="u_tambah.dfm.5" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~5~|u_tambah.dfm.~5~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~5~" SelfReg="false" NextFile="u_tambah.dfm.6"/>
+    <ROW File="u_tambah.dfm.6" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~6~|u_tambah.dfm.~6~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~6~" SelfReg="false" NextFile="u_tambah.dfm.7"/>
+    <ROW File="u_tambah.dfm.7" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~7~|u_tambah.dfm.~7~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~7~" SelfReg="false" NextFile="u_tambah.dfm.8"/>
+    <ROW File="u_tambah.dfm.8" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~8~|u_tambah.dfm.~8~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~8~" SelfReg="false" NextFile="u_tambah.dfm.9"/>
+    <ROW File="u_tambah.dfm.9" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~9~|u_tambah.dfm.~9~" Attributes="0" SourcePath="..\__history\u_tambah.dfm.~9~" SelfReg="false" NextFile="u_tambah.pas.16"/>
+    <ROW File="u_tambah.pas.16" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~16|u_tambah.pas.~16~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~16~" SelfReg="false" NextFile="u_tambah.pas.17"/>
+    <ROW File="u_tambah.pas.17" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~17|u_tambah.pas.~17~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~17~" SelfReg="false" NextFile="u_tambah.pas.18"/>
+    <ROW File="u_tambah.pas.18" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~18|u_tambah.pas.~18~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~18~" SelfReg="false" NextFile="u_tambah.pas.19"/>
+    <ROW File="u_tambah.pas.19" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~19|u_tambah.pas.~19~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~19~" SelfReg="false" NextFile="u_tambah.pas.20"/>
+    <ROW File="u_tambah.pas.20" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~20|u_tambah.pas.~20~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~20~" SelfReg="false" NextFile="u_tambah.pas.21"/>
+    <ROW File="u_tambah.pas.21" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~21|u_tambah.pas.~21~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~21~" SelfReg="false" NextFile="u_tambah.pas.22"/>
+    <ROW File="u_tambah.pas.22" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~22|u_tambah.pas.~22~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~22~" SelfReg="false" NextFile="u_tambah.pas.23"/>
+    <ROW File="u_tambah.pas.23" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~23|u_tambah.pas.~23~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~23~" SelfReg="false" NextFile="u_tambah.pas.24"/>
+    <ROW File="u_tambah.pas.24" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~24|u_tambah.pas.~24~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~24~" SelfReg="false" NextFile="u_tambah.pas.25"/>
+    <ROW File="u_tambah.pas.25" Component_="AplikasiDKM.dpr.1" FileName="U_TAMB~1.~25|u_tambah.pas.~25~" Attributes="0" SourcePath="..\__history\u_tambah.pas.~25~" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="BuildAppV5" BuildName="BuildAppV5" BuildOrder="2" BuildType="5" PackageFolder="BuildAppV5SetupFiles" Languages="en;id" LangOpt="1" AppV50Options="68"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFolder="." Languages="id" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\DREPOS FNB\INSTALLER\ion.ico" ExtUI="true" Options="8" UseLargeSchema="true" ExeName="DKMasjid setup"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_id.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\PreparePrereqDlg.aip"/>
+    <ROW Fragment="PrerequisitesDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\PrerequisitesDlg.aip"/>
+    <ROW Fragment="ProgressPrereqDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\ProgressPrereqDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;air\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="SetupTypeDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\SetupTypeDlg.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;air\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\WelcomeDlg.aip"/>
+    <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;air\fragments\WelcomePrereqDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+    <ROW Name="viewer.exe" SourcePath="&lt;AI_CUSTACTS&gt;viewer.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="PreparePrereqDlg" Control="Cancel" Type="PushButton" X="304" Y="235" Width="50" Height="17" Attributes="2" Text="[ButtonText_Cancel]" Order="100" TextLocId="-" MsiKey="PreparePrereqDlg#Cancel"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="Next" Type="PushButton" X="249" Y="235" Width="50" Height="17" Attributes="0" Text="[ButtonText_Next]" Order="200" TextLocId="-" MsiKey="PreparePrereqDlg#Next"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="Back" Type="PushButton" X="189" Y="235" Width="48" Height="17" Attributes="0" Text="[ButtonText_Back]" Order="300" TextLocId="-" MsiKey="PreparePrereqDlg#Back"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="IntroManufacturer" Type="Text" X="16" Y="116" Width="338" Height="24" Attributes="196611" Text="[Manufacturer]" TextStyle="Manufacturer" Order="400" TextLocId="Modern.Control.Text.Dlg#Manufacturer" MsiKey="PreparePrereqDlg#IntroManufacturer"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="IntroProductName" Type="Text" X="16" Y="140" Width="338" Height="33" Attributes="196611" Text="[ProductName]" TextStyle="ProductName" Order="500" TextLocId="Modern.Control.Text.Dlg#AppName" MsiKey="PreparePrereqDlg#IntroProductName"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="ActionText" Type="Text" X="30" Y="168" Width="305" Height="20" Attributes="196611" Order="600" MsiKey="PreparePrereqDlg#ActionText"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="Description" Type="Text" X="7" Y="281" Width="210" Height="11" Attributes="196611" Text="Please wait while the setup initializes." TextStyle="ImageButton" Order="700" TextLocId="Air.Control.Text.PrepareDlg#Description" MsiKey="PreparePrereqDlg#Description"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="AdminBrowseDlg" Control_="Cancel" Event="EndDialog" Argument="Return" Condition="1" Ordering="200" MsiKey="AdminBrowseDlg#Cancel#EndDialog#Return#1"/>
+    <ROW Dialog_="AdminBrowseDlg" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="200" MsiKey="AdminBrowseDlg#OK#EndDialog#Return#1"/>
+    <ROW Dialog_="AdminBrowseDlg" Control_="OK" Event="SetTargetPath" Argument="TARGETDIR" Condition="1" Ordering="100" MsiKey="AdminBrowseDlg#OK#SetTargetPath#TARGETDIR#1"/>
+    <ROW Dialog_="AdminInstallPointDlg" Control_="Next" Event="SetTargetPath" Argument="TARGETDIR" Condition="1" Ordering="100" MsiKey="AdminInstallPointDlg#Next#SetTargetPath#TARGETDIR#1"/>
+    <ROW Dialog_="AdminWelcomeDlg" Control_="Next" Event="[InstallMode]" Argument="Server Image" Condition="1" Ordering="100" MsiKey="AdminWelcomeDlg#Next#[InstallMode]#Server Image#1"/>
+    <ROW Dialog_="BrowseDlg" Control_="Cancel" Event="EndDialog" Argument="Return" Condition="1" Ordering="200" MsiKey="BrowseDlg#Cancel#EndDialog#Return#1"/>
+    <ROW Dialog_="BrowseDlg" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="200" MsiKey="BrowseDlg#OK#EndDialog#Return#1"/>
+    <ROW Dialog_="BrowseDlg" Control_="OK" Event="SetTargetPath" Argument="[_BrowseProperty]" Condition="1" Ordering="100" MsiKey="BrowseDlg#OK#SetTargetPath#[_BrowseProperty]#1"/>
+    <ROW Dialog_="CancelDlg" Control_="No" Event="EndDialog" Argument="Return" Condition="1" Ordering="100" MsiKey="CancelDlg#No#EndDialog#Return#1"/>
+    <ROW Dialog_="CancelDlg" Control_="Yes" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100" MsiKey="CancelDlg#Yes#EndDialog#Exit#1"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="DoAction" Argument="AI_InstallModeCheck" Condition="AI_MAINT" Ordering="100" MsiKey="CustomizeDlg#Next#DoAction#AI_InstallModeCheck#AI_MAINT"/>
+    <ROW Dialog_="DiskCostDlg" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="100" MsiKey="DiskCostDlg#OK#EndDialog#Return#1"/>
+    <ROW Dialog_="ErrorDlg" Control_="A" Event="EndDialog" Argument="ErrorAbort" Condition="1" Ordering="100" MsiKey="ErrorDlg#A#EndDialog#ErrorAbort#1"/>
+    <ROW Dialog_="ErrorDlg" Control_="C" Event="EndDialog" Argument="ErrorCancel" Condition="1" Ordering="100" MsiKey="ErrorDlg#C#EndDialog#ErrorCancel#1"/>
+    <ROW Dialog_="ErrorDlg" Control_="I" Event="EndDialog" Argument="ErrorIgnore" Condition="1" Ordering="100" MsiKey="ErrorDlg#I#EndDialog#ErrorIgnore#1"/>
+    <ROW Dialog_="ErrorDlg" Control_="N" Event="EndDialog" Argument="ErrorNo" Condition="1" Ordering="100" MsiKey="ErrorDlg#N#EndDialog#ErrorNo#1"/>
+    <ROW Dialog_="ErrorDlg" Control_="O" Event="EndDialog" Argument="ErrorOk" Condition="1" Ordering="100" MsiKey="ErrorDlg#O#EndDialog#ErrorOk#1"/>
+    <ROW Dialog_="ErrorDlg" Control_="R" Event="EndDialog" Argument="ErrorRetry" Condition="1" Ordering="100" MsiKey="ErrorDlg#R#EndDialog#ErrorRetry#1"/>
+    <ROW Dialog_="ErrorDlg" Control_="Y" Event="EndDialog" Argument="ErrorYes" Condition="1" Ordering="100" MsiKey="ErrorDlg#Y#EndDialog#ErrorYes#1"/>
+    <ROW Dialog_="ExitDialog" Control_="LaunchProdCheckBox" Event="DoAction" Argument="AI_LaunchApp" Condition="(AI_INSTALL OR AI_PATCH)" Ordering="100" MsiKey="ExitDialog#LaunchProdCheckBox#DoAction#AI_LaunchApp#(AI_INSTALL OR AI_PATCH)"/>
+    <ROW Dialog_="ExitDialog" Control_="LaunchProdCheckBox" Event="DoAction" Argument="AI_RunFinishActions" Condition="(AI_INSTALL OR AI_PATCH)" Ordering="200" MsiKey="ExitDialog#LaunchProdCheckBox#DoAction#AI_RunFinishActions#(AI_INSTALL OR AI_PATCH)"/>
+    <ROW Dialog_="ExitDialog" Control_="LaunchProdCheckBox" Event="EndDialog" Argument="Return" Condition="1" Ordering="300" MsiKey="ExitDialog#LaunchProdCheckBox#EndDialog#Return#1"/>
+    <ROW Dialog_="ExitDialog" Control_="ViewReadmeCheckBox" Event="DoAction" Argument="AI_ViewReadme" Condition="(AI_INSTALL OR AI_PATCH)" Ordering="100" MsiKey="ExitDialog#ViewReadmeCheckBox#DoAction#AI_ViewReadme#(AI_INSTALL OR AI_PATCH)"/>
+    <ROW Dialog_="ExitDialog" Control_="ViewReadmeCheckBox" Event="DoAction" Argument="AI_RunFinishActions" Condition="(AI_INSTALL OR AI_PATCH)" Ordering="200" MsiKey="ExitDialog#ViewReadmeCheckBox#DoAction#AI_RunFinishActions#(AI_INSTALL OR AI_PATCH)"/>
+    <ROW Dialog_="ExitDialog" Control_="ViewReadmeCheckBox" Event="EndDialog" Argument="Return" Condition="1" Ordering="300" MsiKey="ExitDialog#ViewReadmeCheckBox#EndDialog#Return#1"/>
+    <ROW Dialog_="ExitDialog" Control_="Finish" Event="EndDialog" Argument="Return" Condition="1" Ordering="100" MsiKey="ExitDialog#Finish#EndDialog#Return#1"/>
+    <ROW Dialog_="ExitDialog" Control_="Cancel" Event="EndDialog" Argument="Return" Condition="1" Ordering="100" MsiKey="ExitDialog#Cancel#EndDialog#Return#1"/>
+    <ROW Dialog_="FatalError" Control_="Finish" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100" MsiKey="FatalError#Finish#EndDialog#Exit#1"/>
+    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_SHOW_LOG" Condition="(MsiLogFileLocation AND AI_LOG_CHECKBOX)" Ordering="101" MsiKey="FatalError#Finish#DoAction#AI_SHOW_LOG#(MsiLogFileLocation AND AI_LOG_CHECKBOX)"/>
+    <ROW Dialog_="FatalError" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100" MsiKey="FatalError#Cancel#EndDialog#Exit#1"/>
+    <ROW Dialog_="FilesInUse" Control_="Exit" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100" MsiKey="FilesInUse#Exit#EndDialog#Exit#1"/>
+    <ROW Dialog_="FilesInUse" Control_="Ignore" Event="EndDialog" Argument="Ignore" Condition="1" Ordering="100" MsiKey="FilesInUse#Ignore#EndDialog#Ignore#1"/>
+    <ROW Dialog_="FilesInUse" Control_="Retry" Event="EndDialog" Argument="Retry" Condition="1" Ordering="100" MsiKey="FilesInUse#Retry#EndDialog#Retry#1"/>
+    <ROW Dialog_="OutOfDiskDlg" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="100" MsiKey="OutOfDiskDlg#OK#EndDialog#Return#1"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control_="No" Event="EndDialog" Argument="Return" Condition="1" Ordering="100" MsiKey="OutOfRbDiskDlg#No#EndDialog#Return#1"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control_="Yes" Event="EnableRollback" Argument="False" Condition="1" Ordering="100" MsiKey="OutOfRbDiskDlg#Yes#EnableRollback#False#1"/>
+    <ROW Dialog_="OutOfRbDiskDlg" Control_="Yes" Event="EndDialog" Argument="Return" Condition="1" Ordering="200" MsiKey="OutOfRbDiskDlg#Yes#EndDialog#Return#1"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EnableRollback" Argument="False" Condition="OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="500" MsiKey="ResumeDlg#Install#EnableRollback#False#OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;"/>
+    <ROW Dialog_="UserExit" Control_="Finish" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100" MsiKey="UserExit#Finish#EndDialog#Exit#1"/>
+    <ROW Dialog_="UserExit" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100" MsiKey="UserExit#Cancel#EndDialog#Exit#1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_ADMIN AND InstallMode = &quot;Server Image&quot;" Ordering="150" MsiKey="VerifyReadyDlg#Install#EndDialog#Return#AI_ADMIN AND InstallMode = &quot;Server Image&quot;"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EnableRollback" Argument="False" Condition="OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="400" MsiKey="VerifyReadyDlg#Install#EnableRollback#False#OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;"/>
+    <ROW Dialog_="WaitForCostingDlg" Control_="Return" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100" MsiKey="WaitForCostingDlg#Return#EndDialog#Exit#1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="ReinstallMode" Argument="ecmus" Condition="AI_PATCH" Ordering="100" MsiKey="PatchWelcomeDlg#Next#ReinstallMode#ecmus#AI_PATCH"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="Reinstall" Argument="All" Condition="AI_PATCH" Ordering="200" MsiKey="PatchWelcomeDlg#Next#Reinstall#All#AI_PATCH"/>
+    <ROW Dialog_="MsiRMFilesInUse" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100" MsiKey="MsiRMFilesInUse#Cancel#EndDialog#Exit#1"/>
+    <ROW Dialog_="MsiRMFilesInUse" Control_="OK" Event="EndDialog" Argument="Return" Condition="1" Ordering="200" MsiKey="MsiRMFilesInUse#OK#EndDialog#Return#1"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="CustomCommandLinkButton" Event="[AiEventsControl]" Argument="CustomButton" Condition="1" Ordering="100" MsiKey="SetupTypeDlg#CustomCommandLinkButton#[AiEventsControl]#CustomButton#1"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="TypicalCommandLinkButton" Event="[AiEventsControl]" Argument="TypicalButton" Condition="1" Ordering="100" MsiKey="SetupTypeDlg#TypicalCommandLinkButton#[AiEventsControl]#TypicalButton#1"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="CustomButton" Event="[InstallMode]" Argument="[InstallModeCustom]" Condition="1" Ordering="100" MsiKey="SetupTypeDlg#CustomButton#[InstallMode]#[InstallModeCustom]#1"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="TypicalButton" Event="[InstallMode]" Argument="[InstallModeTypical]" Condition="1" Ordering="100" MsiKey="SetupTypeDlg#TypicalButton#[InstallMode]#[InstallModeTypical]#1"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="TypicalButton" Event="SetInstallLevel" Argument="3" Condition="1" Ordering="200" MsiKey="SetupTypeDlg#TypicalButton#SetInstallLevel#3#1"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="TypicalButton" Event="EnableRollback" Argument="False" Condition="OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="400" MsiKey="SetupTypeDlg#TypicalButton#EnableRollback#False#OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="Back" Event="[InstallMode]" Argument="Typical" Condition="AI_INSTALL" Ordering="100" MsiKey="SetupTypeDlg#Back#[InstallMode]#Typical#AI_INSTALL"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="Back" Event="SetInstallLevel" Argument="3" Condition="AI_INSTALL" Ordering="101" MsiKey="SetupTypeDlg#Back#SetInstallLevel#3#AI_INSTALL"/>
+    <ROW Dialog_="FolderDlg" Control_="Browse" Event="[_BrowseProperty]" Argument="APPDIR" Condition="1" Ordering="100" MsiKey="FolderDlg#Browse#[_BrowseProperty]#APPDIR#1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="SetTargetPath" Argument="APPDIR" Condition="1" Ordering="200" MsiKey="FolderDlg#Next#SetTargetPath#APPDIR#1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="TypicalButton" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="299"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="102"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="101"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="2"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="CustomButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="[InstallMode]" Argument="Change" Condition="1" Ordering="100" MsiKey="MaintenanceTypeDlg#ChangeButton#[InstallMode]#Change#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="[Progress1]" Argument="[CtrlEvtChanging]" Condition="1" Ordering="200" MsiKey="MaintenanceTypeDlg#ChangeButton#[Progress1]#[CtrlEvtChanging]#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="[Progress2]" Argument="[CtrlEvtchanges]" Condition="1" Ordering="300" MsiKey="MaintenanceTypeDlg#ChangeButton#[Progress2]#[CtrlEvtchanges]#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="[AI_INSTALL_MODE]" Argument="Change" Condition="1" Ordering="400" MsiKey="MaintenanceTypeDlg#ChangeButton#[AI_INSTALL_MODE]#Change#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="[AI_CommitButton]" Argument="ButtonText_Install" Condition="1" Ordering="500" MsiKey="MaintenanceTypeDlg#ChangeButton#[AI_CommitButton]#ButtonText_Install#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="[InstallMode]" Argument="Remove" Condition="1" Ordering="100" MsiKey="MaintenanceTypeDlg#RemoveButton#[InstallMode]#Remove#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="[Progress1]" Argument="[CtrlEvtRemoving]" Condition="1" Ordering="200" MsiKey="MaintenanceTypeDlg#RemoveButton#[Progress1]#[CtrlEvtRemoving]#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="[Progress2]" Argument="[CtrlEvtremoves]" Condition="1" Ordering="300" MsiKey="MaintenanceTypeDlg#RemoveButton#[Progress2]#[CtrlEvtremoves]#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="[Finish1]" Argument="[CtrlEventRemoved]" Condition="1" Ordering="400" MsiKey="MaintenanceTypeDlg#RemoveButton#[Finish1]#[CtrlEventRemoved]#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="[AI_INSTALL_MODE]" Argument="Remove" Condition="1" Ordering="500" MsiKey="MaintenanceTypeDlg#RemoveButton#[AI_INSTALL_MODE]#Remove#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="[AI_CommitButton]" Argument="ButtonText_Remove" Condition="1" Ordering="600" MsiKey="MaintenanceTypeDlg#RemoveButton#[AI_CommitButton]#ButtonText_Remove#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="[InstallMode]" Argument="Repair" Condition="1" Ordering="100" MsiKey="MaintenanceTypeDlg#RepairButton#[InstallMode]#Repair#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="[Progress1]" Argument="[CtrlEvtRepairing]" Condition="1" Ordering="200" MsiKey="MaintenanceTypeDlg#RepairButton#[Progress1]#[CtrlEvtRepairing]#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="[Progress2]" Argument="[CtrlEvtrepairs]" Condition="1" Ordering="300" MsiKey="MaintenanceTypeDlg#RepairButton#[Progress2]#[CtrlEvtrepairs]#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="[Finish1]" Argument="[CtrlEventConfigured]" Condition="1" Ordering="400" MsiKey="MaintenanceTypeDlg#RepairButton#[Finish1]#[CtrlEventConfigured]#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="[AI_INSTALL_MODE]" Argument="Repair" Condition="1" Ordering="500" MsiKey="MaintenanceTypeDlg#RepairButton#[AI_INSTALL_MODE]#Repair#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="[AI_CommitButton]" Argument="ButtonText_Repair" Condition="1" Ordering="600" MsiKey="MaintenanceTypeDlg#RepairButton#[AI_CommitButton]#ButtonText_Repair#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveCommandLinkButton" Event="[AiEventsControl]" Argument="RemoveButton" Condition="1" Ordering="100" MsiKey="MaintenanceTypeDlg#RemoveCommandLinkButton#[AiEventsControl]#RemoveButton#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeCommandLinkButton" Event="[AiEventsControl]" Argument="ChangeButton" Condition="1" Ordering="100" MsiKey="MaintenanceTypeDlg#ChangeCommandLinkButton#[AiEventsControl]#ChangeButton#1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairCommandLinkButton" Event="[AiEventsControl]" Argument="RepairButton" Condition="1" Ordering="100" MsiKey="MaintenanceTypeDlg#RepairCommandLinkButton#[AiEventsControl]#RepairButton#1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="102"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="2"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EnableRollback" Argument="False" Condition="OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="500" MsiKey="VerifyRemoveDlg#Remove#EnableRollback#False#OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="Remove" Argument="ALL" Condition="OutOfDiskSpace &lt;&gt; 1" Ordering="100" MsiKey="VerifyRemoveDlg#Remove#Remove#All#OutOfDiskSpace &lt;&gt; 1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EnableRollback" Argument="False" Condition="OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="600" MsiKey="VerifyRepairDlg#Repair#EnableRollback#False#OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="Reinstall" Argument="All" Condition="OutOfDiskSpace &lt;&gt; 1" Ordering="200" MsiKey="VerifyRepairDlg#Repair#Reinstall#All#OutOfDiskSpace &lt;&gt; 1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="ReinstallMode" Argument="ecmus" Condition="OutOfDiskSpace &lt;&gt; 1" Ordering="100" MsiKey="VerifyRepairDlg#Repair#ReinstallMode#ecmus#OutOfDiskSpace &lt;&gt; 1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="ExitDialog" Control_="Finish" Event="DoAction" Argument="LaunchApplication" Condition="AI_INSTALL" Ordering="101"/>
+    <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="LaunchApplication" Type="66" Source="viewer.exe" Target="&quot;[#AplikasiDKM.exe]&quot;" WithoutSeq="true" Options="1"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="AplikasiDKM.exe" Directory_="SHORTCUTDIR" Name="APLIKA~1.EXE|AplikasiDKM.exe" Component_="AplikasiDKM.exe" Target="[#AplikasiDKM.exe]" Description="AplikasiDKM.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="AplikasiDKM.exe_1" Directory_="DesktopFolder" Name="APLIKA~1.EXE|AplikasiDKM.exe" Component_="AplikasiDKM.exe" Target="[#AplikasiDKM.exe]" Description="AplikasiDKM.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="air"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="MariaDB10.1" DisplayName="MariaDB 10.1" VersionMin="10.1.32.0" SetupFileUrl="..\..\DREPOS FNB\RESPOS\Installer\mariadb-10.1.32-win32.msi" Location="0" ExactSize="0" Operator="1" Options="y" TargetName="mariadb-10.1.32-win32.msi"/>
+    <ATTRIBUTE name="PrereqsOrder" value="MariaDB10.1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="UpgradeCode" Prereq="MariaDB10.1" SearchType="4" SearchString="{49EB7A6A-1CEF-4A1E-9E89-B9A4993963E3}" VerMin="10.1.32.0" Order="1" Property="PreReqSearch"/>
+  </COMPONENT>
+</DOCUMENT>
